@@ -1,0 +1,24 @@
+version: '3.8'
+services:
+  cache:
+    image: redis:6.2-alpine
+    restart: always
+    ports:
+      - '6379:6379'
+    command: redis-server --save 20 1 --loglevel warning
+
+  bot:
+    build: ./
+    restart: always
+    command: python main.py
+    environment:
+      - REDIS_HOST=cache
+
+  celery:
+    build: ./
+    restart: always
+    depends_on:
+      - cache
+    environment:
+      - REDIS_HOST=cache
+    command: celery -A tasks:celery worker -l INFO --pool=solo
