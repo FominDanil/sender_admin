@@ -64,3 +64,11 @@ docker-compose up -d --build
 ```
 
 The application will now run in the background, downloading videos from the specified YouTube channels and posting them to the specified Telegram channels according to the schedule defined in the configuration.
+
+## Telegram 
+1. Send the bot a link to the video you want to download and distribute to one of your channels for delayed/instant sending
+![Imgur](https://imgur.com/B8hAAZy)
+2. Choose channel
+![Imgur](https://imgur.com/JROvqDb)
+3. Bot sent your video to a specific channel, the screenshot shows the method with delayed sending
+![Imgur](https://imgur.com/j9hGUaP)
