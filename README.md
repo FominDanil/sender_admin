@@ -1,6 +1,6 @@
 # Admin sender bot
 
-This is a project for downloading videos from YouTube and scheduling them to be posted on a Telegram channel. The application uses Python, Celery, and Redis. The entire project can be spun up using Docker Compose. 
+This project is for downloading videos from various sites and for deferred sending to the channels Telegram, the bot also knows how to change the video based on your request - cut, impose a watermark, remove the sound and more.. The application uses Python, Celery, and Redis. The entire project can be spun up using Docker Compose. 
 
 ## Requirements
 - Python 3.10
