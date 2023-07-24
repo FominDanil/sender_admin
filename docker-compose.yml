@@ -1,0 +1,30 @@
+version: '3.8'
+services:
+  cache:
+    image: redis:6.2-alpine
+    restart: always
+    volumes:
+      - ./redis.conf:/usr/local/etc/redis/redis.conf
+    ports:
+      - '6379:6379'
+    environment:
+      - TZ=Asia/Makassar
+    command: redis-server /usr/local/etc/redis/redis.conf
+
+  bot:
+    build: ./
+    restart: always
+    command: python main.py
+    environment:
+      - TZ=Asia/Makassar
+      - REDIS_HOST=cache
+
+  celery:
+    build: ./
+    restart: always
+    depends_on:
+      - cache
+    environment:
+      - TZ=Asia/Makassar
+      - REDIS_HOST=cache
+    command: celery -A tasks:celery worker -l INFO --pool=solo

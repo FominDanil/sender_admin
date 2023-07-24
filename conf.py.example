@@ -1,0 +1,28 @@
+# do not edit below this line
+################################################################################################################
+import datetime                                                                                                #
+import os                                                                                                      #
+                                                                                                               #
+                                                                                                               #
+from dotenv import load_dotenv                                                                                 #
+                                                                                                               #
+load_dotenv()                                                                                                  #
+                                                                                                               #
+BOT_TOKEN = os.environ.get('BOT_TOKEN')                                                                        #
+                                                                                                               #
+USER_API_ID = os.environ.get('USER_API_ID')                                                                    #
+USER_API_HASH = os.environ.get('USER_API_HASH')                                                                #
+USER_SESSION_NAME = os.environ.get('USER_SESSION_NAME')                                                        #
+PHONE = os.environ.get('PHONE')                                                                                #
+REDIS_PASS = os.environ.get('REDIS_PASS')                                                                      #
+REDIS_URI = f':{REDIS_PASS}@{os.environ.get("REDIS_HOST", "localhost")}:{os.environ.get("REDIS_PORT", 6379)}'  #
+################################################################################################################
+
+#edit below this line
+
+schedule = [datetime.time(0), datetime.time(3), datetime.time(6), datetime.time(9), datetime.time(12), datetime.time(15), datetime.time(18), datetime.time(21)]
+
+channels = [[short_channel_id, full_channel_id, 'channel_name']]
+
+button_text = 'Button text'
+button_url = 'URL button'
