@@ -77,4 +77,4 @@ The application will now run in the background, downloading videos from the spec
 3. Bot sent your video to a specific channel, the screenshot shows the method with delayed sending
 
 
-![Imgur](https://imgur.com/j9hGUaP.png)
+![Imgur](https://imgur.com/j9hGUaP.png)weafvdvf
